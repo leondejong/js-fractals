@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fractals</title>
+    <base href="./" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body {
+        margin: 0;
+        background: rgba(31, 31, 31, 1);
+      }
+      #canvas {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 64rem;
+        height: 48rem;
+        transform: translate(-50%, -50%);
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas" width="1024" height="768"></canvas>
+    <script src="./fractals.js"></script>
+    <script>
+      ;(function () {
+        // Formatted by StandardJS
+
+        const canvas = document.getElementById('canvas')
+        const context = canvas.getContext('2d')
+
+        const width = canvas.width
+        const height = canvas.height
+
+        function background () {
+          context.fillStyle = 'rgba(31, 31, 31, 1)'
+          context.fillRect(0, 0, width, height)
+        }
+
+        function main () {
+          background()
+          // lines(context, width / 2, height - 64)
+          // triangles(context, width / 2, height + 72)
+          // squares(context, width / 2 + 72, height / 2 + 285)
+          circles(context, width / 2 - 50, height - 50)
+          // tree(context, width / 2, height / 2 + 384)
+          // spiral(context, -138, 452)
+        }
+
+        window.onload = main
+      })()
+    </script>
+  </body>
+</html>
